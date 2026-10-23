@@ -6,7 +6,6 @@ import com.notifyx.notifyx.service.NotificationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.Map;
 import java.util.List;
 
 @RestController
@@ -17,17 +16,6 @@ public class NotificationController {
 
     public NotificationController(NotificationService notificationService) {
         this.notificationService = notificationService;
-    }
-
-    // GET: Root health-check endpoint for Vercel preview
-    @GetMapping("/")
-    public ResponseEntity<Map<String, String>> rootEndpoint() {
-        return ResponseEntity.ok(Map.of(
-            "service", "NotifyX Asynchronous Notification Service",
-            "status", "UP",
-            "targetRole", "Workhuman Backend Engineering Intern",
-            "docs", "POST /api/v1/notifications to send notifications"
-        ));
     }
 
     // POST: Trigger a new async notification
