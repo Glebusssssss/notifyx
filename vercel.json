@@ -1,0 +1,16 @@
+{
+  "services": {
+    "notifyx-backend": {
+      "root": ".",
+      "entrypoint": "Dockerfile.vercel"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "notifyx-backend"
+      }
+    }
+  ]
+}
